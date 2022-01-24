@@ -58,6 +58,8 @@ Mappings:
       "REGIONURLSUFFIX" : ""
     us-west-2:
       "REGIONURLSUFFIX" : "-us-west-2"
+    eu-central-1:
+      "REGIONURLSUFFIX" : "-eu-central-1"
 
 Parameters:
   AllowedCidrIngress:
@@ -158,13 +160,22 @@ Parameters:
     Type: String
     Description: Database instance size
     AllowedValues:
-      - db.r4.large 	
-      - db.r4.xlarge 	
-      - db.r4.2xlarge 	
-      - db.r4.4xlarge 	
-      - db.r4.8xlarge 	
-      - db.r4.16xlarge
-    Default: "db.r4.large"
+      - db.r5.large     
+      - db.r5.xlarge    
+      - db.r5.2xlarge   
+      - db.r5.4xlarge   
+      - db.r5.8xlarge   
+      - db.r5.12xlarge   
+      - db.r5.16xlarge
+      - db.r5.24xlarge
+      - db.r6g.large     
+      - db.r6g.xlarge    
+      - db.r6g.2xlarge   
+      - db.r6g.4xlarge   
+      - db.r6g.8xlarge   
+      - db.r6g.12xlarge   
+      - db.r6g.16xlarge
+    Default: "db.r5.large"
   keyname:
     Type: AWS::EC2::KeyPair::KeyName
 

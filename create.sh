@@ -61,7 +61,7 @@ aws cloudformation create-stack --stack-name $stackname \
     ParameterKey=TemplateBucketPrefix,ParameterValue=$templateprefix \
     ParameterKey=ProjectTag,ParameterValue=pgpoolblog \
     ParameterKey=vpccidr,ParameterValue="10.20.0.0/16" \
-    ParameterKey=AllowedCidrIngress,ParameterValue="205.0.0.0/8" \
+    ParameterKey=AllowedCidrIngress,ParameterValue="85.145.206.15/32" \
     ParameterKey=AppPrivateCIDRA,ParameterValue="10.20.3.0/24" \
     ParameterKey=AppPrivateCIDRB,ParameterValue="10.20.4.0/24" \
     ParameterKey=AppPrivateCIDRC,ParameterValue="10.20.5.0/24" \
@@ -71,7 +71,7 @@ aws cloudformation create-stack --stack-name $stackname \
     ParameterKey=DatabaseName,ParameterValue="pgpooldb" \
     ParameterKey=DatabaseUser,ParameterValue="pgpooluser" \
     ParameterKey=DatabasePassword,ParameterValue="pgp0o1Cred" \
-    ParameterKey=DbInstanceSize,ParameterValue="db.r4.large" \
-    ParameterKey=keyname,ParameterValue="rdaws-sandbox" \
+    ParameterKey=DbInstanceSize,ParameterValue="db.r5.large" \
+    ParameterKey=keyname,ParameterValue="postgresqlnodes" \
     --tags Key=Project,Value=pgpoolblog \
     --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM

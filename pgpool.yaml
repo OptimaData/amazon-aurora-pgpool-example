@@ -186,21 +186,21 @@ Resources:
           commands:
             a_packages:
               cwd: "/tmp"
-              command:  'yum groupinstall -y "Development Tools" && amazon-linux-extras enable postgresql11 && yum clean metadata && yum install -y postgresql postgresql-devel'
+              command:  'yum groupinstall -y "Development Tools" && amazon-linux-extras enable postgresql12 && yum clean metadata && yum install -y postgresql postgresql-devel'
             b_download_zip:
               cwd: "/tmp"
-              command:  "wget www.pgpool.net/mediawiki/download.php?f=pgpool-II-4.2.1.tar.gz -O /tmp/pgpool-II-4.2.1.tar.gz"
+              command:  "wget www.pgpool.net/mediawiki/download.php?f=pgpool-II-4.3.0.tar.gz -O /tmp/pgpool-II-4.3.0.tar.gz"
             c_unpack_zip:
               cwd: "/opt"
-              command:  "tar zxf /tmp/pgpool-II-4.2.1.tar.gz"
+              command:  "tar zxf /tmp/pgpool-II-4.3.0.tar.gz"
             d_configure:
-              cwd: "/opt/pgpool-II-4.2.1"
+              cwd: "/opt/pgpool-II-4.3.0"
               command: "./configure"
             e_make:
-              cwd: "/opt/pgpool-II-4.2.1"
+              cwd: "/opt/pgpool-II-4.3.0"
               command: "make"
             f_install:
-              cwd: "/opt/pgpool-II-4.2.1"
+              cwd: "/opt/pgpool-II-4.3.0"
               command: "make install"
             g_mkdirs:
               cwd: "/"

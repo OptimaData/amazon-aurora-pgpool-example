@@ -38,13 +38,22 @@ Parameters:
     Type: String
     Description: Database instance size
     AllowedValues:
-      - db.r4.large 	
-      - db.r4.xlarge 	
-      - db.r4.2xlarge 	
-      - db.r4.4xlarge 	
-      - db.r4.8xlarge 	
-      - db.r4.16xlarge
-    Default: "db.r4.large"
+      - db.r5.large
+      - db.r5.xlarge
+      - db.r5.2xlarge
+      - db.r5.4xlarge
+      - db.r5.8xlarge
+      - db.r5.12xlarge
+      - db.r5.16xlarge
+      - db.r5.24xlarge
+      - db.r6g.large
+      - db.r6g.xlarge
+      - db.r6g.2xlarge
+      - db.r6g.4xlarge
+      - db.r6g.8xlarge
+      - db.r6g.12xlarge
+      - db.r6g.16xlarge
+    Default: "db.r5.large"
   ProjectTag:
     Type: String
     Description: Tag to apply to created resources for visibility
@@ -64,7 +73,7 @@ Resources:
     Properties:
       DatabaseName: !Ref DatabaseName
       Engine: aurora-postgresql
-      EngineVersion: 11.9
+      EngineVersion: 13.4
       MasterUsername: !Ref DatabaseUser
       MasterUserPassword: !Ref DatabasePassword
       DBSubnetGroupName: !Ref DBSubnets
@@ -80,7 +89,7 @@ Resources:
     Properties:
       DBClusterIdentifier: !Ref DBAuroraCluster
       Engine: aurora-postgresql
-      EngineVersion: 11.9
+      EngineVersion: 13.4
       DBInstanceClass: !Ref DbInstanceSize
       DBSubnetGroupName: !Ref DBSubnets
       DBParameterGroupName: !Ref DBParamGroup
@@ -93,7 +102,7 @@ Resources:
     Properties:
       DBClusterIdentifier: !Ref DBAuroraCluster
       Engine: aurora-postgresql
-      EngineVersion: 11.9
+      EngineVersion: 13.4
       DBInstanceClass: !Ref DbInstanceSize
       DBSubnetGroupName: !Ref DBSubnets
       DBParameterGroupName: !Ref DBParamGroup
@@ -106,7 +115,7 @@ Resources:
     Properties:
       DBClusterIdentifier: !Ref DBAuroraCluster
       Engine: aurora-postgresql
-      EngineVersion: 11.9
+      EngineVersion: 13.4
       DBInstanceClass: !Ref DbInstanceSize
       DBSubnetGroupName: !Ref DBSubnets
       DBParameterGroupName: !Ref DBParamGroup
@@ -127,7 +136,7 @@ Resources:
     Type: "AWS::RDS::DBParameterGroup"
     Properties: 
       Description: Parameter group for RDS cluster
-      Family: aurora-postgresql11
+      Family: aurora-postgresql13
       Tags:
         - Key: Project
           Value: !Ref ProjectTag
@@ -135,7 +144,7 @@ Resources:
     Type: "AWS::RDS::DBClusterParameterGroup"
     Properties: 
       Description: Parameter group for RDS cluster
-      Family: aurora-postgresql11
+      Family: aurora-postgresql13
       Parameters:
         timezone: "UTC"
       Tags:
